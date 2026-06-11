@@ -1,0 +1,209 @@
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--text-primary);
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Deeper and more elegant overlay */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 7, 9, 0.45) 0%,
+    rgba(7, 7, 9, 0.82) 60%,
+    var(--bg-dark) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rem;
+  max-width: 900px;
+}
+
+.hero-badge {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.badge-line {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary));
+}
+
+.badge-line:last-child {
+  background: linear-gradient(90deg, var(--gold-primary), transparent);
+}
+
+.badge-text {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--gold-light);
+  text-shadow: 0 0 10px rgba(224, 190, 122, 0.3);
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  line-height: 1.15;
+  margin-bottom: 1.75rem;
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+  background: linear-gradient(135deg, var(--text-primary) 30%, var(--gold-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.highlight-text {
+  color: var(--gold-primary);
+  font-style: italic;
+  font-weight: 300;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.hero-ornament {
+  height: 20px;
+  width: auto;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  filter: sepia(1) saturate(1.8) hue-rotate(340deg) brightness(0.95);
+  animation: float 5s ease-in-out infinite;
+}
+
+.hero-description {
+  max-width: 800px;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 3.5rem;
+  font-weight: 300;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-description strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.75rem;
+}
+
+/* Scroll indicator */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  transition: var(--transition-smooth);
+}
+
+.hero-scroll-indicator:hover {
+  color: var(--gold-primary);
+}
+
+.mouse {
+  width: 22px;
+  height: 34px;
+  border: 1.5px solid var(--text-muted);
+  border-radius: 12px;
+  position: relative;
+  transition: var(--transition-fast);
+}
+
+.hero-scroll-indicator:hover .mouse {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 10px rgba(189, 155, 83, 0.3);
+}
+
+.wheel {
+  width: 3px;
+  height: 6px;
+  background-color: var(--gold-primary);
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scrollWheel 1.6s ease-in-out infinite;
+}
+
+@keyframes scrollWheel {
+  0% {
+    top: 6px;
+    opacity: 1;
+  }
+  100% {
+    top: 20px;
+    opacity: 0;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 3.25rem;
+  }
+  .hero-description {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    min-height: 600px;
+  }
+  .hero-title {
+    font-size: 2.4rem;
+  }
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 1.25rem;
+    padding: 0 2.5rem;
+  }
+  .btn {
+    width: 100%;
+  }
+}

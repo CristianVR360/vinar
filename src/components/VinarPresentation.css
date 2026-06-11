@@ -1,0 +1,927 @@
+/* === FULL-PAGE PRESENTATION === */
+.presentation-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+}
+
+.presentation-page .presentation-container {
+  flex: 1;
+  max-width: 100%;
+  height: 100vh;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+
+/* Back-to-home button */
+.btn-back-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.45rem 1.1rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  white-space: nowrap;
+}
+
+.btn-back-home:hover {
+  background: rgba(197, 160, 89, 0.1);
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+}
+
+/* Presentation Container - Pitch Deck */
+.presentation-container {
+  width: 100%;
+  max-width: 1120px;
+  height: 650px;
+  margin: 0 auto;
+  border-radius: 16px;
+  border: 1px solid var(--border-medium);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5), 0 0 40px rgba(197, 160, 89, 0.08);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  z-index: 2;
+}
+
+/* Fullscreen Mode override */
+.presentation-container.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  border-radius: 0;
+  border: none;
+  z-index: 99999;
+}
+
+/* Top bar style */
+.presentation-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2.5rem;
+  background: rgba(11, 11, 13, 0.7);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.9rem;
+  z-index: 10;
+}
+
+.presentation-brand {
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+}
+
+.presentation-brand .gold-text {
+  color: var(--gold-primary);
+  font-weight: 800;
+  text-shadow: 0 0 10px rgba(197, 160, 89, 0.3);
+}
+
+.presentation-slide-indicator {
+  color: var(--text-secondary);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.btn-control {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-control:hover {
+  background: var(--gold-primary);
+  color: var(--bg-dark);
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 12px var(--gold-primary);
+  transform: scale(1.08);
+}
+
+/* Progress bar */
+.presentation-progress-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  z-index: 10;
+}
+
+.presentation-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--wine-bright) 0%, var(--gold-primary) 100%);
+  box-shadow: 0 0 10px rgba(184, 53, 76, 0.5);
+  transition: width 0.4s ease;
+}
+
+/* Slides Content Wrapper */
+.presentation-slide-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 6rem;
+  position: relative;
+  overflow-y: auto;
+}
+
+.fullscreen .presentation-slide-content {
+  padding: 4rem 10rem;
+}
+
+/* Glassmorphic card styling inside deck */
+.glassmorphic {
+  background: rgba(20, 20, 26, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: var(--transition-smooth);
+}
+
+.glassmorphic:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: var(--border-medium);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 15px rgba(197, 160, 89, 0.05);
+}
+
+/* Slide Typography & Labels */
+.slide-label {
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 0.25em;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.slide-title {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.slide-desc {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+/* --- SLIDE LAYOUTS & STYLES --- */
+
+/* 1. COVER SLIDE */
+.slide-layout-cover {
+  text-align: center;
+  max-width: 750px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slide-badge {
+  background: rgba(197, 160, 89, 0.1);
+  color: var(--gold-light);
+  border: 1px solid var(--border-light);
+  padding: 0.4rem 1.4rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  margin-bottom: 1.75rem;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.slide-title-large {
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, var(--text-primary) 30%, var(--gold-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.slide-subtitle-large {
+  font-size: 1.6rem;
+  color: var(--gold-primary);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.slide-divider {
+  width: 90px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+  margin-bottom: 2rem;
+}
+
+.slide-desc-large {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+
+.slide-action-btn {
+  animation: pulse 2.5s infinite;
+  font-weight: 600;
+}
+
+/* 2. COOPERATIVE SLIDE (5 families) */
+.slide-layout-coop {
+  display: grid;
+  grid-template-columns: 1.1fr 1.9fr;
+  gap: 3.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+.vinas-list-deck {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 440px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.coop-vina-card {
+  padding: 1rem 1.5rem;
+}
+
+.coop-vina-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.coop-vina-num {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--gold-primary);
+  font-weight: 600;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding-right: 0.75rem;
+}
+
+.coop-vina-name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.coop-vina-zone {
+  margin-left: auto;
+  font-size: 0.7rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  letter-spacing: 0.05em;
+}
+
+.coop-vina-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+  padding-left: 2.25rem;
+}
+
+/* Custom scrollbar for wineries list in deck */
+.vinas-list-deck::-webkit-scrollbar {
+  width: 4px;
+}
+.vinas-list-deck::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+.vinas-list-deck::-webkit-scrollbar-thumb {
+  background: var(--wine-dark);
+  border-radius: 2px;
+}
+
+/* 3. TERROIR SLIDE */
+.slide-layout-terroir {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.terroir-deck-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.terroir-deck-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.terroir-deck-icon {
+  font-size: 2.8rem;
+  margin-bottom: 1.25rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.terroir-deck-title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--gold-primary);
+  margin-bottom: 0.75rem;
+}
+
+.terroir-deck-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* 4 & 5. CEPAS SLIDES */
+.slide-layout-cepas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.cepas-deck-grid {
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.cepas-deck-grid.three-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cepas-deck-grid.two-cols {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 800px;
+}
+
+.cepa-deck-card {
+  padding: 1.5rem;
+}
+
+.cepa-deck-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 0.75rem;
+}
+
+.cepa-color-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+}
+
+.cepa-deck-name {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.cepa-deck-profile {
+  font-size: 0.75rem;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  display: block;
+}
+
+.cepa-deck-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cepa-characteristic-block strong {
+  font-size: 0.85rem;
+  color: var(--gold-light);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.cepa-characteristic-block p {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* 6. ATTRIBUTES SLIDE */
+.slide-layout-attributes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.attributes-deck-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 900px;
+  margin-top: 1rem;
+}
+
+.attribute-deck-card {
+  display: grid;
+  grid-template-columns: 1.2fr 1.8fr;
+  gap: 2rem;
+  padding: 1.5rem 2rem;
+  align-items: center;
+}
+
+.attr-deck-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.attr-deck-num {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--wine-bright);
+  font-weight: bold;
+  line-height: 1;
+}
+
+.attr-deck-title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  margin: 0 0 0.15rem 0;
+}
+
+.attr-deck-badge {
+  font-size: 0.72rem;
+  background: rgba(197, 160, 89, 0.1);
+  color: var(--gold-light);
+  border: 1px solid var(--border-light);
+  padding: 0.1rem 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.attr-deck-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* 7. NUMBERS / VENDIMIA SLIDE */
+.slide-layout-numbers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* === Vendimia Editions Grid === */
+.vendimia-editions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: 900px;
+  margin-top: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.vendimia-edition-card {
+  padding: 2rem 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.vendimia-edition-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--wine-bright), transparent);
+  opacity: 0.5;
+}
+
+.vendimia-edition-card.edition-featured::before {
+  background: linear-gradient(90deg, var(--gold-primary), var(--wine-bright));
+  opacity: 1;
+}
+
+.vendimia-edition-card.edition-featured {
+  border-color: rgba(197, 160, 89, 0.2) !important;
+  background: rgba(30, 20, 14, 0.6) !important;
+}
+
+.edition-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.edition-year {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--gold-primary);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.edition-grow-badge {
+  font-size: 0.68rem;
+  background: rgba(197, 160, 89, 0.1);
+  color: var(--gold-light);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.edition-stats-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.edition-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+}
+
+.edition-big-num {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  color: var(--wine-bright);
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0 4px 15px rgba(184, 53, 76, 0.4);
+}
+
+.edition-big-num.edition-wineries-num {
+  color: var(--gold-primary);
+  text-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+  font-size: 2rem;
+}
+
+.edition-stat-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.35rem;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.edition-divider-v {
+  width: 1px;
+  height: 56px;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.08), transparent);
+  flex-shrink: 0;
+}
+
+.edition-desc {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 0.85rem;
+}
+
+.numbers-deck-highlight {
+  background: rgba(197, 160, 89, 0.08);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  border-radius: 8px;
+  padding: 0.85rem 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.numbers-deck-highlight .icon {
+  font-size: 1.4rem;
+}
+
+.numbers-deck-highlight p {
+  font-size: 1rem;
+  color: var(--gold-light);
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* 8. BUSINESS SLIDE */
+.slide-layout-business {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.business-deck-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.business-deck-card {
+  padding: 1.75rem 1.5rem;
+}
+
+.biz-deck-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--gold-primary);
+  margin-bottom: 0.75rem;
+}
+
+.biz-deck-desc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.business-deck-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+  padding-top: 1.75rem;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.business-deck-footer .icon {
+  color: var(--gold-primary);
+  margin-right: 0.35rem;
+  font-size: 1.1rem;
+  text-shadow: 0 0 8px rgba(197, 160, 89, 0.3);
+}
+
+/* Navigation Arrows */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(11, 11, 13, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  z-index: 5;
+  padding-bottom: 4px;
+  backdrop-filter: blur(8px);
+}
+
+.nav-arrow:hover {
+  background: var(--gold-primary);
+  color: var(--bg-dark);
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 18px rgba(197, 160, 89, 0.5);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.nav-arrow.prev { left: 1.75rem; }
+.nav-arrow.next { right: 1.75rem; }
+
+/* Dots indicators */
+.presentation-dots {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.8rem;
+  z-index: 5;
+}
+
+.pres-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.pres-dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.pres-dot.active {
+  background: var(--gold-primary);
+  width: 24px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px var(--gold-primary);
+}
+
+/* Help text at bottom right */
+.presentation-help {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 2.5rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: slideFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 4px 20px rgba(92, 19, 33, 0.25); }
+  50% { transform: scale(1.04); box-shadow: 0 6px 25px rgba(184, 53, 76, 0.45), 0 0 10px rgba(197, 160, 89, 0.2); }
+  100% { transform: scale(1); box-shadow: 0 4px 20px rgba(92, 19, 33, 0.25); }
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .presentation-container {
+    height: auto;
+    min-height: 600px;
+  }
+  
+  .presentation-slide-content {
+    padding: 3.5rem 4rem;
+  }
+
+  .slide-layout-coop {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .vinas-list-deck {
+    max-height: 250px;
+  }
+
+  .cepas-deck-grid.three-cols, .terroir-deck-grid, .business-deck-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .cepas-deck-grid.two-cols {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .attributes-deck-list {
+    max-width: 100%;
+  }
+
+  .attribute-deck-card {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 1.25rem;
+  }
+
+  .numbers-deck-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .business-deck-footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .slide-title-large {
+    font-size: 3.2rem;
+  }
+
+  .slide-subtitle-large {
+    font-size: 1.3rem;
+  }
+
+  .presentation-help {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .presentation-slide-content {
+    padding: 3rem 2.5rem;
+  }
+
+  .nav-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1.6rem;
+  }
+  
+  .nav-arrow.prev { left: 0.5rem; }
+  .nav-arrow.next { right: 0.5rem; }
+  
+  .slide-title-large {
+    font-size: 2.4rem;
+  }
+  
+  .slide-title {
+    font-size: 1.8rem;
+  }
+}
