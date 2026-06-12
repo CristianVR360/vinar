@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tour start="node1" appversion="6.1.2" apprev="17873">
+  <panorama id="node1">
+    <input levelbias="0.400" levelbiashidpi="1.000" width="2048" height="2048" leveltilesize="510" levelingroll="0" levelingpitch="0" overlap="1" leveltileurl="tiles/node1/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level preload="0" width="2048" predecode="0" height="2048"/>
+      <level preload="0" width="1024" predecode="0" height="1024"/>
+      <level preload="0" width="512" predecode="0" height="512"/>
+      <level preload="1" width="256" predecode="1" height="256"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view fovmode="0" pannorth="0">
+      <start fov="79.49" pan="-178.72" tilt="-90" projection="4"/>
+      <flyin fov="170" pan="0" tilt="-90" projection="9"/>
+      <min fovpixel="2" pan="0" tilt="-90"/>
+      <max fovstereographic="270" fov="120" fovfisheye="360" scaletofit="1" pan="360" tilt="90"/>
+    </view>
+    <userdata nodeid="node1" source="" info="" latitude="-38.725872" customnodeid="" datetime="01-01-1970 0:00" title="Vendimia 2025" longitude="-72.570916" comment="" author="" description="" copyright="" tags="360"/>
+    <hotspots width="180" height="20" wordwrap="1">
+      <label enabled="1" bordercolor="0x000000" textalpha="1" backgroundalpha="1" width="180" textcolor="0x000000" background="1" backgroundcolor="0xffffff" border="1" height="20" borderalpha="1" wordwrap="1" borderradius="1"/>
+      <polystyle mode="0" handcursor="1" bordercolor="0x0000ff" backgroundalpha="0.25098" backgroundcolor="0x0000ff" borderalpha="1"/>
+      <hotspot url="" title="" id="Point01" pan="321" tilt="-89.03" target="_blank" skinid="agradecimiento" description=""/>
+      <hotspot url="" title="Expositores" id="Point02" pan="-300.01" tilt="-53.2" target="_blank" skinid="ht_info" description="&lt;b>Viñas Expositoras&lt;/b>&#xa;&#xa;•Viña Aires de Menetué&#xa;•Viña Aquitania&#xa;•Viña Aynco&#xa;•Viña Bertuzzi Venturelli&#xa;•Viña Brio Wine&#xa;•Viña Cavallieri&#xa;•Viña Don Damián&#xa;•Viña El Tesoro&#xa;•Viña Kofkeche&#xa;•Viña Kutralkura&#xa;•Viña Pin Wine&#xa;•Viña Pukem&#xa;•Viña Quimey&#xa;•Viña Trayenko&#xa;•Viña Neluz&#xa;•Viña San Juan&#xa;•Viña Wampuhue"/>
+      <hotspot url="" title="" id="Point02" pan="-263.31" tilt="-55.17" target="" skinid="ht_resumen" description="&lt;b>Resumen del evento&lt;/b>&#xa;&#xa;La Primera Fiesta de la Vendimia de La Araucanía se realizó el sábado 26 de abril de 2025 en el Museo Nacional Ferroviario Pablo Neruda, Temuco.&#xa;Más de 2.000 personas disfrutaron de una jornada gratuita y familiar con viñas regionales, charlas enológicas, música en vivo, degustaciones guiadas, zona infantil, emprendedores locales y una experiencia única de maridaje con vinos y chocolates. "/>
+    </hotspots>
+    <media/>
+    <transition zoomspeed="2" enabled="1" blendtime="1" zoomin="0" zoomoutpause="1" zoomfov="20" softedge="0" blendcolor="0x000000" zoomout="0" type="crossdissolve"/>
+    <autorotate startloaded="0" enabled="1" useanimation="0" speed="0.020" returntohorizon="0.000" nodefilter="" noderandom="1" delay="5.00" nodedelay="0.00"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0"/>
+    <control dblclickfullscreen="0" invertcontrol="1" contextfullscreen="1" simulatemass="1" lockedkeyboard="0" hideabout="0" sensitivity="8" speedwheel="1" rubberband="0" lockedmouse="0" contextprojections="0" invertwheel="0" lockedwheel="0" lockedkeyboardzoom="0"/>
+  </panorama>
+  <panorama id="node2">
+    <input levelbias="0.400" levelbiashidpi="1.000" width="2048" height="2048" leveltilesize="510" levelingroll="0" levelingpitch="0" overlap="1" leveltileurl="tiles/node2/cf_%c/l_%l/c_%x/tile_%y.jpg">
+      <level preload="0" width="2048" predecode="0" height="2048"/>
+      <level preload="0" width="1024" predecode="0" height="1024"/>
+      <level preload="0" width="512" predecode="0" height="512"/>
+      <level preload="1" width="256" predecode="1" height="256"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view fovmode="0" pannorth="0">
+      <start fov="70" pan="1.46" tilt="0" projection="4"/>
+      <flyin fov="170" pan="0" tilt="-90" projection="9"/>
+      <min fovpixel="2" pan="0" tilt="-90"/>
+      <max fovstereographic="270" fov="120" fovfisheye="360" scaletofit="1" pan="360" tilt="90"/>
+    </view>
+    <userdata nodeid="node2" source="" info="" latitude="-38.725870" customnodeid="" datetime="01-01-1970 0:00" title="default" longitude="-72.570930" comment="" author="" description="" copyright="" tags="360"/>
+    <hotspots width="180" height="20" wordwrap="1">
+      <label enabled="1" bordercolor="0x000000" textalpha="1" backgroundalpha="1" width="180" textcolor="0x000000" background="1" backgroundcolor="0xffffff" border="1" height="20" borderalpha="1" wordwrap="1" borderradius="1"/>
+      <polystyle mode="0" handcursor="1" bordercolor="0x0000ff" backgroundalpha="0.25098" backgroundcolor="0x0000ff" borderalpha="1"/>
+    </hotspots>
+    <media/>
+    <transition zoomspeed="2" enabled="1" blendtime="1" zoomin="0" zoomoutpause="1" zoomfov="20" softedge="0" blendcolor="0x000000" zoomout="0" type="crossdissolve"/>
+    <autorotate startloaded="0" enabled="1" useanimation="0" speed="0.020" returntohorizon="0.000" nodefilter="" noderandom="1" delay="5.00" nodedelay="0.00"/>
+    <animation useinautorotation="0" animsequence="Animation01" syncanimationwithvideo="0"/>
+    <control dblclickfullscreen="0" invertcontrol="1" contextfullscreen="1" simulatemass="1" lockedkeyboard="0" hideabout="0" sensitivity="8" speedwheel="1" rubberband="0" lockedmouse="0" contextprojections="0" invertwheel="0" lockedwheel="0" lockedkeyboardzoom="0"/>
+  </panorama>
+  <masternode>
+    <userdata nodeid="master" source="" info="" latitude="" customnodeid="" datetime="" title="Vendimia 2025" longitude="" comment="" author="" description="" copyright="" tags=""/>
+  </masternode>
+</tour>

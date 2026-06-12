@@ -45,18 +45,19 @@ export default function Footer() {
             <h4>Viñas Asociadas</h4>
             <ul>
               <li><a href="#vinas">Viña Quimey</a></li>
-              <li><a href="#vinas">Viña Aynco</a></li>
+              <li><a href="#vinas">Viña Wuampuhue</a></li>
               <li><a href="#vinas">Viña Kutralkura</a></li>
               <li><a href="#vinas">Viña Cavallieri</a></li>
               <li><a href="#vinas">Viña Don Damián</a></li>
+              <li><a href="#vinas">Viña Los Sauces</a></li>
             </ul>
           </div>
 
           <div className="footer-links-col">
             <h4>Contacto</h4>
-            <p className="contact-info">📍 Región de la Araucanía, Chile</p>
-            <p className="contact-info">📧 contacto@vinar.cl</p>
-            <p className="contact-info">📞 +56 95555 4444</p>
+            <p className="contact-info">📍 Temuco, Región de la Araucanía</p>
+            <p className="contact-info">📧 vinar.chile@gmail.com</p>
+            <p className="contact-info">📞 +56 9 8214 4582</p>
           </div>
         </div>
       </div>

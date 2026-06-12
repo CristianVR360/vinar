@@ -3,8 +3,13 @@ import './Vinas.css';
 import vinasData from '../data/vinasData';
 
 // Dynamic Zone Classification
-const getZone = (location) => {
-  const loc = location.toLowerCase();
+const getZone = (vina) => {
+  if (vina.id === 'quimey') return 'Valle de Malleco';
+  if (vina.id === 'cavallieri') return 'Valle de Cautín';
+  if (vina.id === 'wuampuhue') return 'Valle de Cautín';
+  if (vina.id === 'los-sauces') return 'Valle de Cautín';
+
+  const loc = vina.location.toLowerCase();
   if (loc.includes('pucón') || loc.includes('pucon')) return 'Zona Lacustre';
   if (loc.includes('carahue') || loc.includes('schmidt') || loc.includes('nohualhue') || loc.includes('imperial') || loc.includes('nehuentue')) return 'Zona Costa';
   if (loc.includes('traiguén') || loc.includes('traiguen') || loc.includes('sauces') || loc.includes('curacautín') || loc.includes('curacautin') || loc.includes('malleco') || loc.includes('angol')) return 'Valle de Malleco';
@@ -33,12 +38,12 @@ export default function Vinas() {
 
   // Process data to inject zones dynamically and restrict to cooperative members
   const vinasWithZones = useMemo(() => {
-    const cooperativaIds = ['aynco', 'cavallieri', 'quimey', 'don-damian', 'kutralkura'];
+    const cooperativaIds = ['wuampuhue', 'cavallieri', 'quimey', 'don-damian', 'kutralkura', 'los-sauces'];
     return vinasData
       .filter(vina => cooperativaIds.includes(vina.id))
       .map(vina => ({
         ...vina,
-        zone: getZone(vina.location)
+        zone: getZone(vina)
       }));
   }, []);
 

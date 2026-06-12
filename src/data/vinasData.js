@@ -712,6 +712,52 @@ const vinasData = [
       "wazeUrl": "https://www.waze.com/ul?ll=-38.6829795,-73.3265640&navigate=yes"
     },
     "contactName": "Isolina Huenulao"
+  },
+  {
+    "id": "los-sauces",
+    "name": "Viña Los Sauces",
+    "location": "Los Sauces, Región de la Araucanía, Chile",
+    "description": "Viña Los Sauces — Vinos excepcionales de clima frío elaborados con pasión familiar en el Valle de Cautín.",
+    "paragraphs": [
+      "Viña Los Sauces nace como un proyecto familiar dedicado a la producción artesanal de vinos finos de clima frío, orientados a la alta gama y el respeto por el terroir austral.",
+      "Nuestros viñedos se benefician del clima extremo de la Araucanía, permitiendo una maduración lenta de la uva que concentra aromas delicados y entrega una acidez natural vibrante en cada botella."
+    ],
+    "cepas": "Pinot Noir, Chardonnay",
+    "cepasList": [
+      "Pinot Noir",
+      "Chardonnay"
+    ],
+    "cepaItems": [
+      {
+        "name": "Pinot Noir Los Sauces",
+        "type": "Pinot Noir",
+        "image": "/img/viñas/wuampuhue/pinot noir.jpg",
+        "description": "De color rubí translúcido, ofrece aromas a frutos rojos silvestres y notas florales. En boca destaca por sus taninos suaves y acidez refrescante."
+      },
+      {
+        "name": "Chardonnay Los Sauces",
+        "type": "Chardonnay",
+        "image": "/img/viñas/wuampuhue/sidra.jpg",
+        "description": "De color amarillo pálido brillante. En nariz presenta notas cítricas y minerales, con un final largo, fresco y equilibrado."
+      }
+    ],
+    "logo": "/img/viñas/wuampuhue/logo_wuampuhue-.png",
+    "bg": "/img/viñas/wuampuhue/hero.jpg",
+    "aboutImg": "/img/viñas/wuampuhue/about.jpg",
+    "nav": {
+      "web": "",
+      "instagram": "",
+      "whatsapp": "",
+      "email": "mailto:vinar.chile@gmail.com"
+    },
+    "locationDetails": {
+      "title": "Nuestra Ubicación",
+      "desc": "Los Sauces, Región de la Araucanía, Chile",
+      "iframeSrc": "",
+      "googleMapsUrl": "",
+      "wazeUrl": ""
+    },
+    "contactName": ""
   }
 ];
 

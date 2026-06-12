@@ -12,21 +12,22 @@ const slidesData = [
     title: 'VINAR',
     subtitle: 'La Frontera del Vino Chileno',
     badge: 'Vitivinicultura Austral de Cooperación y Alta Gama',
-    description: 'Cinco familias viñateras unidas en la Araucanía para desafiar los límites de la geografía, elaborando vinos de clima frío con una pureza y carácter únicos en el mundo.',
+    description: 'Seis familias viñateras unidas en la Araucanía para desafiar los límites de la geografía, elaborando vinos de clima frío con una pureza y carácter únicos en el mundo.',
     actionText: 'Iniciar Presentación',
     bgGradient: 'radial-gradient(circle at 50% 50%, rgba(92, 19, 33, 0.95) 0%, rgba(11, 11, 13, 1) 100%)'
   },
   {
     type: 'cooperative',
     title: 'La Cooperativa VINAR',
-    subtitle: '5 Familias, 1 Identidad Austral',
-    description: 'La unión hace la fuerza en la frontera del vino chileno. Agrupamos a cinco proyectos boutique pioneros de la Araucanía, compartiendo conocimientos y recursos para posicionar la vitivinicultura austral en el mapa global.',
+    subtitle: '6 Familias, 1 Identidad Austral',
+    description: 'La unión hace la fuerza en la frontera del vino chileno. Agrupamos a seis proyectos boutique pioneros de la Araucanía, compartiendo conocimientos y recursos para posicionar la vitivinicultura austral en el mapa global.',
     vinas: [
-      { name: 'Viña Aynco', zone: 'Cautín', desc: 'Vinos frescos y de gran perfil mineral en Galvarino.' },
-      { name: 'Viña Cavallieri', zone: 'Malleco', desc: 'Tradición de origen italiano y finos vinos de Los Sauces.' },
-      { name: 'Viña Quimey', zone: 'Costa', desc: 'Vinos costeros de fuerte carácter oceánico en la Cordillera de la Costa.' },
+      { name: 'Viña Wuampuhue', zone: 'Cautín', desc: 'Experiencia Mapuche Lafkenche con producción artesanal limitada en Carahue.' },
+      { name: 'Viña Cavallieri', zone: 'Cautín', desc: 'Tradición de origen italiano y finos vinos de Los Sauces.' },
+      { name: 'Viña Quimey', zone: 'Malleco', desc: 'Vinos costeros de fuerte carácter oceánico en la Cordillera de la Costa.' },
       { name: 'Viña Don Damián', zone: 'Cautín', desc: 'Tradición familiar e historia desde 1925 en Galvarino.' },
-      { name: 'Viña Kütralkura', zone: 'Malleco', desc: 'Bodega sustentable a los pies de la precordillera en Curacautín.' }
+      { name: 'Viña Kütralkura', zone: 'Malleco', desc: 'Bodega sustentable a los pies de la precordillera en Curacautín.' },
+      { name: 'Viña Los Sauces', zone: 'Cautín', desc: 'Vinos de clima frío con carácter y elegancia en Los Sauces.' }
     ],
     bgGradient: 'radial-gradient(circle at 10% 20%, rgba(58, 13, 20, 0.95) 0%, rgba(11, 11, 13, 1) 90%)'
   },
@@ -201,10 +202,22 @@ const slidesData = [
         desc: 'VINAR representó los vinos del sur de Chile en la Expo Internacional de Osaka, Japón, durante la Semana del Vino Mundial, posicionando la Araucanía en el mapa vitivinícola global.'
       },
       {
+        date: 'Septiembre 2025',
+        iconKey: 'building',
+        title: 'Presentación en Cineteca Nacional',
+        desc: 'Presentación de vinos VINAR en la Cineteca Nacional (Palacio de La Moneda, Santiago). Invitados por la Embajada de Alemania.'
+      },
+      {
+        date: 'Septiembre 2025',
+        iconKey: 'building',
+        title: 'Presentación en Destino Valparaíso',
+        desc: 'Presentación de vinos VINAR en el Espacio Destino Valparaíso (Museo del Inmigrante). Invitados por la Embajada de Alemania.'
+      },
+      {
         date: 'Mayo 2026',
         iconKey: 'trending',
         title: '2ª Fiesta de la Vendimia de la Araucanía',
-        desc: 'Segunda edición con mayor asistencia, más productores y una demanda que supera toda expectativa. Más de 5.000 visitantes y 14 viñas reunidas, confirmando el crecimiento sostenido del evento.'
+        desc: 'Segunda edición con mayor asistencia, más productores (sumando por primera vez una viña invitada de Argentina) y una demanda que supera toda expectativa. Más de 5.000 visitantes y 14 viñas reunidas, confirmando el crecimiento sostenido del evento.'
       }
     ],
     upcoming: [
@@ -270,11 +283,18 @@ const slidesData = [
       }
     ],
     contactInfo: {
-      email: 'contacto@vinar.cl',
-      phone: '+56 9 7695 9529',
-      location: 'Temuco - Galvarino, Región de La Araucanía, Chile'
+      email: 'vinar.chile@gmail.com',
+      phone: '+56 9 8214 4582',
+      location: 'Temuco, Región de la Araucanía'
     },
     bgGradient: 'radial-gradient(circle at 50% 50%, rgba(92, 19, 33, 0.95) 0%, rgba(11, 11, 13, 1) 100%)'
+  },
+  {
+    type: 'masterplan360',
+    title: 'Master Plan 360°',
+    subtitle: 'Vendimia 2026',
+    description: 'Visualiza la distribución de stands, áreas de cata y la experiencia completa del festival a través de nuestro recorrido virtual 360 interactivo.',
+    bgGradient: 'radial-gradient(circle at 50% 50%, rgba(30, 30, 45, 0.95) 0%, rgba(11, 11, 13, 1) 100%)'
   }
 ];
 
@@ -647,6 +667,23 @@ export default function VinarPresentation() {
                 <div className="biz-footer-item">
                   <MapPin size={16} strokeWidth={1.5} className="biz-icon" /> {slide.contactInfo.location}
                 </div>
+              </div>
+            </div>
+          )}
+
+          {/* MASTER PLAN 360 */}
+          {slide.type === 'masterplan360' && (
+            <div className="slide-layout-masterplan animate-fade-in">
+              <span className="slide-label">{slide.subtitle}</span>
+              <h2 className="slide-title text-center">{slide.title}</h2>
+              <p className="slide-desc text-center max-w-xl">{slide.description}</p>
+              <div className="masterplan-iframe-container">
+                <iframe
+                  src="/360/vista360.html"
+                  title="Master Plan 360 de la Vendimia 2026"
+                  className="masterplan-iframe"
+                  allowFullScreen
+                />
               </div>
             </div>
           )}
