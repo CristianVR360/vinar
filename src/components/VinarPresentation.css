@@ -85,6 +85,7 @@
   -webkit-backdrop-filter: blur(15px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   font-size: 0.9rem;
+  position: relative;
   z-index: 10;
 }
 
@@ -862,13 +863,20 @@
 
 /* Responsive Overrides */
 @media (max-width: 1024px) {
+  .presentation-page .presentation-container {
+    height: auto;
+    min-height: 100vh;
+  }
+
   .presentation-container {
     height: auto;
     min-height: 600px;
   }
   
   .presentation-slide-content {
-    padding: 3.5rem 4rem;
+    padding: 3.5rem 2rem;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   .slide-layout-coop {
